@@ -35,10 +35,15 @@
 
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
-def one(input1, input2):
-	return ""
 
-#------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+def strings(input1, input2):
+	if len(input1) > len(input2):
+		print("string 1 is longer!", input1)
+	elif len(input1) < len(input2):
+		print("string 2 is longer!", input2)
+	return "the string lengths are equal, {input1}, {input2}"
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 	# <QUESTION 2>
 
@@ -59,9 +64,16 @@ def one(input1, input2):
 
 	# No hints for this question
 
-def two(arg1):
-	return "null"
-
+def fizzbuzz(arg1):
+	for fizzbuzz in range(100):
+		if (input % 3 == 0) and (input % 5 == 0):
+			return "FizzBuzz"
+		if input % 3 == 0:
+			return "Fizz"
+		if input % 5 == 0:
+			return "Buzz"
+	else:
+		return "null"
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 3>
@@ -78,9 +90,9 @@ def two(arg1):
 
 	# How do we ignore case in a String? help(str) may offer some insight.
 
-def three(input):
-    return 0
-
+	def vowel_count(string):
+		vowels = ['a', 'e', 'i', 'o', 'u']
+		return len([i for i in string if i in vowels])
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 4>
@@ -101,8 +113,26 @@ def three(input):
 	# Step through the logic here in order to solve the problem, you may find help(range) helpful.
 
 
-def four(input):
-    return False
+def check(input):
+	if not "ie" in input and not "ei" in input:
+		return True
+	else:
+		if not "c" in input and "ei" in input:
+			return False
+		if not "c" in input and "ie" in input:
+			return True
+		if "c" in input and "ie" in input:
+			if input.index("ie") - input.index("c") == 1:
+				return False
+			else:
+				return True
+		if "c" in input and "ei" in input:
+			if input.index("ei") - input.index("c") == 1:
+				return True
+			else:
+				return False
+
+print(check(input("Enter a word: ")))
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -121,8 +151,12 @@ def four(input):
 
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
-def five(input):
-	return 1
+s = 0
+n = int(input("Enter a number "))
+for i in range(1, n + 1, 1):
+    s += i
+print("\n")
+print("Sum is: ", s)
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -193,9 +227,29 @@ def seven(inputString, char):
 
 	# help(int) for working with numbers and help(str) for working with Strings.
 
-def eight(arg1):
-	return 0
+# Python3 program to calculate sum of
+# all numbers present in a string
+# containing alphanumeric characters
 
+# Function to calculate sum of all
+# numbers present in a string
+# containing alphanumeric characters
+
+
+def findSum(str1):
+	temp = "0"
+	sum = 0
+	
+for ch in str1:
+	if (ch.isdigit()):
+		temp += ch
+	else:
+		sum += int(temp)
+		temp = "0"
+return sum + int(temp)
+
+str1 = "20lkm2298lm"
+print(findSum(str1))
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 	# <QUESTION 9>
